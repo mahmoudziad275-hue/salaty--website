@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#123d32">
+
+    <meta name="description" content="صلاتي - تابع مواقيت الصلاة وسجل صلواتك وأذكارك اليومية.">
+
+    <title>صلاتي | حافظ على صلاتك</title>
+
+    <!-- ملفات التصميم والتطبيق -->
+    <link rel="stylesheet" href="c:\Users\maza\Desktop\زياد محمود\style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="icon-192.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">🕌 صلاتي</div>
+
+    <nav>
+        <a href="#home">الرئيسية</a>
+        <a href="#times">المواقيت</a>
+        <a href="#prayers">صلواتي</a>
+        <a href="#stats">إنجازاتي</a>
+        <a href="#azkar">الأذكار</a>
+    </nav>
+</header>
+
+<main>
+
+    <!-- الواجهة الرئيسية -->
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+
+            <span class="tag">رحلتك إلى الطمأنينة</span>
+
+            <h1>
+                حافظ على صلاتك<br>
+                تطمئن حياتك ❤️
+            </h1>
+
+            <p>
+                اجعل الصلاة جزءاً أساسياً من يومك،
+                وابدأ كل يوم بخطوة جديدة.
+            </p>
+
+            <a href="#prayers" class="main-btn">
+                ابدأ رحلتك
+            </a>
+
+            <button id="installBtn" class="install-btn" type="button" hidden>
+                <span>📲</span>
+                تثبيت تطبيق صلاتي
+            </button>
+
+        </div>
+    </section>
+
+    <!-- التاريخ -->
+
+    <section class="date-section">
+        <h2 id="todayDate">اليوم</h2>
+        <p>اللهم أعنّا على ذكرك وشكرك وحسن عبادتك</p>
+    </section>
+
+    <!-- مواقيت الصلاة -->
+
+    <section class="section" id="times">
+
+        <h2>🕌 مواقيت الصلاة</h2>
+
+        <p class="subtitle">
+            تابع مواقيت الصلاة في مدينتك
+        </p>
+
+        <div class="city-box">
+
+            <input
+                type="text"
+                id="cityInput"
+                list="citySuggestions"
+                placeholder="اكتب اسم المدينة بالعربي"
+                value="دمنهور"
+                autocomplete="off"
+            >
+
+            <datalist id="citySuggestions">
+                <option value="دمنهور">
+                <option value="القاهرة">
+                <option value="الإسكندرية">
+                <option value="طنطا">
+                <option value="دسوق">
+                <option value="كفر الشيخ">
+                <option value="دمياط">
+                <option value="المنصورة">
+                <option value="الزقازيق">
+                <option value="بنها">
+                <option value="الجيزة">
+                <option value="شبين الكوم">
+                <option value="أسيوط">
+                <option value="سوهاج">
+                <option value="الأقصر">
+                <option value="أسوان">
+                <option value="بورسعيد">
+                <option value="الإسماعيلية">
+                <option value="السويس">
+                <option value="الفيوم">
+                <option value="بني سويف">
+                <option value="مرسى مطروح">
+            </datalist>
+
+            <button id="cityBtn" type="button">
+                تحديث
+            </button>
+
+        </div>
+
+        <p id="cityName">دمنهور - مصر</p>
+
+        <div id="prayerTimes" class="times-grid">
+            جاري تحميل المواقيت...
+        </div>
+
+        <p id="timesMessage" class="message"></p>
+
+        <p class="note">
+            الشروق موعد شروق الشمس وليس صلاة مفروضة.
+        </p>
+
+    </section>
+
+    <!-- الصلوات الخمس -->
+
+    <section class="section" id="prayers">
+
+        <h2>🌙 صلواتي اليوم</h2>
+
+        <p class="subtitle">
+            سجل صلاتك بعد أدائها
+        </p>
+
+        <div class="prayer-list">
+
+            <div class="prayer-card">
+                <span>🌅 صلاة الفجر</span>
+                <button class="done" data-prayer="الفجر" type="button">
+                    لم أصلِّ بعد
+                </button>
+            </div>
+
+            <div class="prayer-card">
+                <span>☀️ صلاة الظهر</span>
+                <button class="done" data-prayer="الظهر" type="button">
+                    لم أصلِّ بعد
+                </button>
+            </div>
+
+            <div class="prayer-card">
+                <span>🌤️ صلاة العصر</span>
+                <button class="done" data-prayer="العصر" type="button">
+                    لم أصلِّ بعد
+                </button>
+            </div>
+
+            <div class="prayer-card">
+                <span>🌇 صلاة المغرب</span>
+                <button class="done" data-prayer="المغرب" type="button">
+                    لم أصلِّ بعد
+                </button>
+            </div>
+
+            <div class="prayer-card">
+                <span>🌙 صلاة العشاء</span>
+                <button class="done" data-prayer="العشاء" type="button">
+                    لم أصلِّ بعد
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- الإحصائيات -->
+
+    <section class="section" id="stats">
+
+        <h2>📊 إنجازاتي</h2>
+
+        <div class="stats-card">
+
+            <h3>نسبة المحافظة على الصلاة اليوم</h3>
+
+            <div class="percentage" id="percentage">
+                0%
+            </div>
+
+            <div class="progress-bar">
+                <div id="progressFill"></div>
+            </div>
+
+            <p id="completedCount">0 من 5 صلوات</p>
+
+        </div>
+
+        <h3 class="weekly-title">📅 سجل الأسبوع</h3>
+
+        <div id="weeklyStats" class="weekly-grid"></div>
+
+    </section>
+
+    <!-- الأذكار -->
+
+    <section class="section" id="azkar">
+
+        <h2>🤲 أذكاري اليومية</h2>
+
+        <p class="subtitle">
+            اجعل لسانك عامراً بذكر الله
+        </p>
+
+        <div class="azkar-list">
+
+            <div class="zekr">
+                <p>سبحان الله</p>
+                <button class="zekr-btn" data-zekr="0" type="button">
+                    تم الذكر ✓
+                </button>
+            </div>
+
+            <div class="zekr">
+                <p>الحمد لله</p>
+                <button class="zekr-btn" data-zekr="1" type="button">
+                    تم الذكر ✓
+                </button>
+            </div>
+
+            <div class="zekr">
+                <p>الله أكبر</p>
+                <button class="zekr-btn" data-zekr="2" type="button">
+                    تم الذكر ✓
+                </button>
+            </div>
+
+            <div class="zekr">
+                <p>أستغفر الله</p>
+                <button class="zekr-btn" data-zekr="3" type="button">
+                    تم الذكر ✓
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- إعدادات الأذان والإشعارات -->
+
+    <section class="section" id="adhanSettings">
+
+        <h2>🔔 إعدادات الأذان والتنبيهات</h2>
+
+        <p class="subtitle">
+            اختر التنبيهات التي تريد تفعيلها
+        </p>
+
+        <div class="adhan-settings-list">
+
+            <label class="setting-row">
+                <span>🔊 تشغيل الأذان عند دخول وقت الصلاة</span>
+                <input type="checkbox" id="adhanEnabled" checked>
+            </label>
+
+            <label class="setting-row">
+                <span>⏰ إشعار قبل الصلاة بـ10 دقائق</span>
+                <input type="checkbox" id="reminderEnabled" checked>
+            </label>
+
+        </div>
+
+        <div class="adhan-buttons">
+
+            <button id="notificationBtn" type="button">
+                تفعيل الإشعارات
+            </button>
+
+            <button id="testAdhanBtn" type="button">
+                تجربة صوت الأذان
+            </button>
+
+        </div>
+
+        <p id="adhanMessage" class="message"></p>
+
+        <p class="note">
+            يجب السماح بالإشعارات والصوت من إعدادات المتصفح.
+            وقد تتوقف التنبيهات إذا أُغلق الموقع أو قيّد الهاتف عمله في الخلفية.
+        </p>
+
+        <audio id="adhanAudio" preload="none">
+            <source src="c:\Users\maza\Music\إني جزيتهم اليوم بما صبروا...... تلاوة مبكية من أواخر سورة المؤمنون للقارئ إسلام صبحي #قرآن_كريم.mp3" type="audio/mpeg">
+            متصفحك لا يدعم تشغيل الصوت.
+        </audio>
+
+    </section>
+
+    <!-- الآية القرآنية -->
+
+    <section class="quote">
+        <h2>﴿ وَأَقِمِ الصَّلَاةَ لِذِكْرِي ﴾</h2>
+        <p>سورة طه - الآية 14</p>
+    </section>
+
+</main>
+
+<!-- التذييل -->
+
+<footer>
+    <h3>🕌 صلاتي</h3>
+    <p>اللهم اجعلنا من المحافظين على الصلاة</p>
+    <p>جميع الحقوق محفوظة © 2026</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
